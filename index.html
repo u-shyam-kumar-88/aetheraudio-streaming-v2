@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AetherAudio — Studio-Grade Music Streaming</title>
+  <meta name="description" content="AetherAudio — High-resolution, studio-grade music streaming web application crafted with semantic HTML5 and modern CSS3.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Hidden Checkbox for Mobile Navigation Toggle (Pure CSS) -->
+  <input type="checkbox" id="mobile-nav-toggle" class="mobile-nav-toggle-input" aria-label="Toggle navigation menu">
+  
+  <div class="app-container">
+    <!-- ==================== 1. SIDEBAR NAVIGATION ==================== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a href="#home" class="brand-logo" aria-label="AetherAudio Home">
+          <div class="logo-icon-wrap">
+            <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 10v4"></path>
+              <path d="M6 7v10"></path>
+              <path d="M10 3v18"></path>
+              <path d="M14 7v10"></path>
+              <path d="M18 10v4"></path>
+              <path d="M22 12v0"></path>
+            </svg>
+          </div>
+          <span class="brand-text">Aether<span class="gradient-text">Audio</span></span>
+        </a>
+        <label for="mobile-nav-toggle" class="sidebar-close-btn" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </label>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-group">
+          <span class="nav-group-title">Menu</span>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="#home" class="nav-link active">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <span>Home</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#browse" class="nav-link">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                </svg>
+                <span>Browse</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#playlists" class="nav-link">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15V6"></path>
+                  <path d="M18.5 18a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"></path>
+                  <path d="M12 12H3"></path>
+                  <path d="M16 6H3"></path>
+                  <path d="M12 18H3"></path>
+                </svg>
+                <span>Playlists</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#library" class="nav-link">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m16 6 4 14"></path>
+                  <path d="M12 6v14"></path>
+                  <path d="M8 8v12"></path>
+                  <path d="M4 4v16"></path>
+                </svg>
+                <span>Library</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-group">
+          <span class="nav-group-title">My Music</span>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="#liked" class="nav-link">
+                <div class="icon-chip heart-chip">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                  </svg>
+                </div>
+                <span>Liked Songs</span>
+                <span class="badge">128</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#podcasts" class="nav-link">
+                <div class="icon-chip podcast-chip">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                    <line x1="12" y1="19" x2="12" y2="22"></line>
+                  </svg>
+                </div>
+                <span>Podcasts</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-group playlist-group">
+          <div class="group-header-row">
+            <span class="nav-group-title">Pinned Playlists</span>
+            <button class="icon-btn-ghost" title="Create Playlist" aria-label="Create Playlist">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+          </div>
+          <ul class="playlist-quick-list">
+            <li><a href="#playlist-1" class="playlist-quick-link">Cyberpunk Focus 2026</a></li>
+            <li><a href="#playlist-2" class="playlist-quick-link">Midnight Lo-Fi Beats</a></li>
+            <li><a href="#playlist-3" class="playlist-quick-link">Future Bass & Waves</a></li>
+            <li><a href="#playlist-4" class="playlist-quick-link">Acoustic Sunsets</a></li>
+            <li><a href="#playlist-5" class="playlist-quick-link">Deep Electronic Club</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="pro-card">
+          <div class="pro-card-content">
+            <div class="pro-badge">Hi-Fi Audio</div>
+            <h4>AetherAudio Studio</h4>
+            <p>Lossless streaming, spatial audio & offline downloads.</p>
+            <a href="#upgrade" class="pro-btn">Upgrade Plan</a>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Overlay backdrop for mobile drawer -->
+    <label for="mobile-nav-toggle" class="sidebar-backdrop" aria-hidden="true"></label>
+
+    <!-- ==================== MAIN CONTENT WRAPPER ==================== -->
+    <div class="main-wrapper">
+      <!-- ==================== TOP BAR ==================== -->
+      <header class="top-bar">
+        <div class="top-bar-left">
+          <!-- Mobile Hamburger Toggle -->
+          <label for="mobile-nav-toggle" class="mobile-menu-btn" aria-label="Open sidebar navigation">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </label>
+
+          <!-- History navigation buttons -->
+          <div class="history-controls">
+            <button class="history-btn" title="Go back" aria-label="Go back">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button class="history-btn disabled" title="Go forward" aria-label="Go forward" disabled>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Search Bar -->
+          <div class="search-bar">
+            <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" placeholder="Search artists, tracks, or albums..." class="search-input" aria-label="Search input">
+            <span class="search-shortcut">⌘K</span>
+          </div>
+        </div>
+
+        <div class="top-bar-right">
+          <button class="top-action-btn" title="Notifications" aria-label="Notifications">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span class="notification-indicator"></span>
+          </button>
+
+          <a href="#premium" class="premium-badge-link">
+            <span class="sparkle-icon">✦</span>
+            <span>Get VIP</span>
+          </a>
+
+          <!-- User Profile -->
+          <div class="user-profile">
+            <div class="avatar-wrapper">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Elena Rostova Avatar" class="user-avatar">
+              <span class="status-dot online"></span>
+            </div>
+            <div class="user-details">
+              <span class="user-name">Elena Rostova</span>
+              <span class="user-role">Master Plan</span>
+            </div>
+            <svg class="chevron-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+        </div>
+      </header>
+
+      <!-- ==================== MAIN SCROLLABLE CONTENT ==================== -->
+      <main class="content-area">
+
+        <!-- ==================== 2. FEATURED BANNER (HERO) ==================== -->
+        <section class="featured-hero" id="home">
+          <div class="hero-backdrop-gradient"></div>
+          <div class="hero-content">
+            <div class="hero-tag">
+              <span class="pulsing-glow"></span>
+              <span class="tag-text">Trending Album • Dolby Atmos</span>
+            </div>
+            <h1 class="hero-title">Neon Odyssey <span class="gradient-text">Deluxe</span></h1>
+            <p class="hero-artist">By <strong>Aura Nova & The Synth Syndicate</strong> • Released 2026 • 18 Tracks</p>
+            <p class="hero-desc">
+              Immerse yourself in cinematic retro-futurism with analog basslines, lush reverberations, and heart-pounding electro-melodies.
+            </p>
+            <div class="hero-actions">
+              <button class="btn btn-primary" aria-label="Play album">
+                <svg class="btn-play-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <span>Play Now</span>
+              </button>
+              <button class="btn btn-secondary" aria-label="Save to library">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                </svg>
+                <span>Save to Library</span>
+              </button>
+              <button class="btn-icon-circle" title="More Options" aria-label="More options">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <circle cx="12" cy="12" r="2"></circle>
+                  <circle cx="19" cy="12" r="2"></circle>
+                  <circle cx="5" cy="12" r="2"></circle>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="hero-art-wrapper">
+            <div class="vinyl-record">
+              <div class="vinyl-grooves"></div>
+              <div class="vinyl-center"></div>
+            </div>
+            <div class="hero-art-card">
+              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="Neon Odyssey Album Artwork" class="hero-art-img">
+              <div class="art-overlay-glass">
+                <span class="lossless-badge">24-BIT / 96KHZ FLAC</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 4b. RECENTLY PLAYED (COMPACT ROW) ==================== -->
+        <section class="section-container" id="recently-played">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Jump Back In</h2>
+              <p class="section-subtitle">Pick up right where your rhythm left off</p>
+            </div>
+            <a href="#see-all-recent" class="see-all-link">View All <span class="arrow">→</span></a>
+          </div>
+
+          <div class="recent-grid">
+            <div class="recent-card">
+              <div class="recent-thumb-wrap">
+                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=200&q=80" alt="Cyberwave Pulse" class="recent-thumb">
+                <button class="recent-hover-play" aria-label="Play Cyberwave Pulse">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                </button>
+              </div>
+              <div class="recent-info">
+                <h4 class="recent-name">Cyberwave Pulse</h4>
+                <p class="recent-meta">Playlist • 42 tracks</p>
+              </div>
+              <div class="sound-wave-bars">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+
+            <div class="recent-card">
+              <div class="recent-thumb-wrap">
+                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=200&q=80" alt="Midnight Jazz Lounge" class="recent-thumb">
+                <button class="recent-hover-play" aria-label="Play Midnight Jazz Lounge">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                </button>
+              </div>
+              <div class="recent-info">
+                <h4 class="recent-name">Midnight Jazz Lounge</h4>
+                <p class="recent-meta">Album • Miles & Evans</p>
+              </div>
+            </div>
+
+            <div class="recent-card">
+              <div class="recent-thumb-wrap">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=200&q=80" alt="Deep Bass Anthems" class="recent-thumb">
+                <button class="recent-hover-play" aria-label="Play Deep Bass Anthems">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                </button>
+              </div>
+              <div class="recent-info">
+                <h4 class="recent-name">Deep Bass Anthems</h4>
+                <p class="recent-meta">Playlist • EDM Daily</p>
+              </div>
+            </div>
+
+            <div class="recent-card">
+              <div class="recent-thumb-wrap">
+                <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=200&q=80" alt="Lo-Fi Study Beats" class="recent-thumb">
+                <button class="recent-hover-play" aria-label="Play Lo-Fi Study Beats">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                </button>
+              </div>
+              <div class="recent-info">
+                <h4 class="recent-name">Lo-Fi Study Beats</h4>
+                <p class="recent-meta">Radio • Chillhop Station</p>
+              </div>
+            </div>
+
+            <div class="recent-card">
+              <div class="recent-thumb-wrap">
+                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=200&q=80" alt="Neon Velocity" class="recent-thumb">
+                <button class="recent-hover-play" aria-label="Play Neon Velocity">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                </button>
+              </div>
+              <div class="recent-info">
+                <h4 class="recent-name">Neon Velocity</h4>
+                <p class="recent-meta">Single • Hyperdrive</p>
+              </div>
+            </div>
+
+            <div class="recent-card">
+              <div class="recent-thumb-wrap">
+                <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=200&q=80" alt="Sunset Acoustics" class="recent-thumb">
+                <button class="recent-hover-play" aria-label="Play Sunset Acoustics">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                </button>
+              </div>
+              <div class="recent-info">
+                <h4 class="recent-name">Sunset Acoustics</h4>
+                <p class="recent-meta">Playlist • Unplugged</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 3. ARTISTS & ALBUMS ==================== -->
+        <!-- 3A. FEATURED ARTISTS (CIRCULAR PROFILES) -->
+        <section class="section-container" id="artists">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Popular Artists</h2>
+              <p class="section-subtitle">The voices shaping global soundscapes today</p>
+            </div>
+            <a href="#see-all-artists" class="see-all-link">Show More <span class="arrow">→</span></a>
+          </div>
+
+          <div class="artists-grid">
+            <div class="artist-card">
+              <div class="artist-avatar-wrap">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Aura Nova" class="artist-avatar">
+                <button class="card-play-btn" aria-label="Play Aura Nova">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                </button>
+                <span class="verified-badge" title="Verified Artist">✓</span>
+              </div>
+              <h3 class="artist-name">Aura Nova</h3>
+              <p class="artist-genre">Synthpop & Darkwave</p>
+              <span class="artist-listeners">42.8M listeners</span>
+            </div>
+
+            <div class="artist-card">
+              <div class="artist-avatar-wrap">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" alt="Kai Vance" class="artist-avatar">
+                <button class="card-play-btn" aria-label="Play Kai Vance">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                </button>
+                <span class="verified-badge" title="Verified Artist">✓</span>
+              </div>
+              <h3 class="artist-name">Kai Vance</h3>
+              <p class="artist-genre">Neo-Soul / R&B</p>
+              <span class="artist-listeners">38.1M listeners</span>
+            </div>
+
+            <div class="artist-card">
+              <div class="artist-avatar-wrap">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80" alt="Luna Solaris" class="artist-avatar">
+                <button class="card-play-btn" aria-label="Play Luna Solaris">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                </button>
+                <span class="verified-badge" title="Verified Artist">✓</span>
+              </div>
+              <h3 class="artist-name">Luna Solaris</h3>
+              <p class="artist-genre">Electropop / Dance</p>
+              <span class="artist-listeners">51.4M listeners</span>
+            </div>
+
+            <div class="artist-card">
+              <div class="artist-avatar-wrap">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" alt="Marcus Thorne" class="artist-avatar">
+                <button class="card-play-btn" aria-label="Play Marcus Thorne">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                </button>
+              </div>
+              <h3 class="artist-name">Marcus Thorne</h3>
+              <p class="artist-genre">Cinematic Orchestral</p>
+              <span class="artist-listeners">27.3M listeners</span>
+            </div>
+
+            <div class="artist-card">
+              <div class="artist-avatar-wrap">
+                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80" alt="Chloe Ray" class="artist-avatar">
+                <button class="card-play-btn" aria-label="Play Chloe Ray">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                </button>
+                <span class="verified-badge" title="Verified Artist">✓</span>
+              </div>
+              <h3 class="artist-name">Chloe Ray</h3>
+              <p class="artist-genre">Indie Alternative</p>
+              <span class="artist-listeners">19.9M listeners</span>
+            </div>
+
+            <div class="artist-card">
+              <div class="artist-avatar-wrap">
+                <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=300&q=80" alt="Dax & Vector" class="artist-avatar">
+                <button class="card-play-btn" aria-label="Play Dax & Vector">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                </button>
+              </div>
+              <h3 class="artist-name">Dax &amp; Vector</h3>
+              <p class="artist-genre">Melodic Techno</p>
+              <span class="artist-listeners">33.5M listeners</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3B. TOP ALBUMS (SQUARE COVERS) -->
+        <section class="section-container" id="albums">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Trending Albums</h2>
+              <p class="section-subtitle">Mastered in pristine studio-grade audio</p>
+            </div>
+            <a href="#see-all-albums" class="see-all-link">Browse Catalog <span class="arrow">→</span></a>
+          </div>
+
+          <div class="albums-grid">
+            <div class="album-card">
+              <div class="album-cover-wrap">
+                <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&w=400&q=80" alt="Chroma Horizons" class="album-cover">
+                <button class="card-play-btn" aria-label="Play Chroma Horizons">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                </button>
+                <span class="album-badge">Hi-Res</span>
+              </div>
+              <h3 class="album-title">Chroma Horizons</h3>
+              <p class="album-artist">Aura Nova</p>
+              <p class="album-details">2026 • 12 Songs</p>
+            </div>
+
+            <div class="album-card">
+              <div class="album-cover-wrap">
+                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=400&q=80" alt="Midnight Reverie" class="album-cover">
+                <button class="card-play-btn" aria-label="Play Midnight Reverie">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                </button>
+                <span class="album-badge">Spatial</span>
+              </div>
+              <h3 class="album-title">Midnight Reverie</h3>
+              <p class="album-artist">Kai Vance</p>
+              <p class="album-details">2025 • 10 Songs</p>
+            </div>
+
+            <div class="album-card">
+              <div class="album-cover-wrap">
+                <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=400&q=80" alt="Subatomic Velocity" class="album-cover">
+                <button class="card-play-btn" aria-label="Play Subatomic Velocity">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                </button>
+              </div>
+              <h3 class="album-title">Subatomic Velocity</h3>
+              <p class="album-artist">Dax &amp; Vector</p>
+              <p class="album-details">2026 • 14 Songs</p>
+            </div>
+
+            <div class="album-card">
+              <div class="album-cover-wrap">
+                <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=400&q=80" alt="Elysian Echoes" class="album-cover">
+                <button class="card-play-btn" aria-label="Play Elysian Echoes">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                </button>
+                <span class="album-badge">Vinyl Mix</span>
+              </div>
+              <h3 class="album-title">Elysian Echoes</h3>
+              <p class="album-artist">Luna Solaris</p>
+              <p class="album-details">2025 • 11 Songs</p>
+            </div>
+
+            <div class="album-card">
+              <div class="album-cover-wrap">
+                <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=400&q=80" alt="Infinite Odyssey" class="album-cover">
+                <button class="card-play-btn" aria-label="Play Infinite Odyssey">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                </button>
+              </div>
+              <h3 class="album-title">Infinite Odyssey</h3>
+              <p class="album-artist">Marcus Thorne</p>
+              <p class="album-details">2026 • 9 Scores</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 4a. CURATED PLAYLISTS ==================== -->
+        <section class="section-container" id="playlists">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Curated Playlists</h2>
+              <p class="section-subtitle">Tailored mixes updated by top tastemakers daily</p>
+            </div>
+            <a href="#see-all-playlists" class="see-all-link">Explore Mixes <span class="arrow">→</span></a>
+          </div>
+
+          <div class="playlists-grid">
+            <div class="playlist-card gradient-theme-emerald">
+              <div class="playlist-artwork">
+                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=400&q=80" alt="Neon Focus playlist" class="playlist-img">
+                <button class="card-play-btn" aria-label="Play Neon Focus">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                </button>
+              </div>
+              <div class="playlist-body">
+                <span class="playlist-badge">Curator's Choice</span>
+                <h3 class="playlist-name">Cyberpunk Coding &amp; Flow</h3>
+                <p class="playlist-desc">Heavy synth, dark modular soundscapes & zero lyrics for deep coding marathons.</p>
+                <div class="playlist-meta">
+                  <span>84 Tracks</span> • <span>5h 12m</span> • <span>142K Likes</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="playlist-card gradient-theme-violet">
+              <div class="playlist-artwork">
+                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=400&q=80" alt="Midnight Velvet playlist" class="playlist-img">
+                <button class="card-play-btn" aria-label="Play Midnight Velvet">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                </button>
+              </div>
+              <div class="playlist-body">
+                <span class="playlist-badge">Late Night</span>
+                <h3 class="playlist-name">Midnight Velvet Neo-Soul</h3>
+                <p class="playlist-desc">Warm Rhodes piano chords, silky vocal runs and intimate slow grooves.</p>
+                <div class="playlist-meta">
+                  <span>65 Tracks</span> • <span>4h 05m</span> • <span>98K Likes</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="playlist-card gradient-theme-amber">
+              <div class="playlist-artwork">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=400&q=80" alt="Festival Mainstage playlist" class="playlist-img">
+                <button class="card-play-btn" aria-label="Play Festival Mainstage">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                </button>
+              </div>
+              <div class="playlist-body">
+                <span class="playlist-badge">High Energy</span>
+                <h3 class="playlist-name">Electric Club Peak Time</h3>
+                <p class="playlist-desc">Unstoppable festival energy, colossal drop anthems and four-on-the-floor power.</p>
+                <div class="playlist-meta">
+                  <span>50 Tracks</span> • <span>3h 48m</span> • <span>210K Likes</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="playlist-card gradient-theme-cyan">
+              <div class="playlist-artwork">
+                <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=400&q=80" alt="Lo-Fi Rain playlist" class="playlist-img">
+                <button class="card-play-btn" aria-label="Play Lo-Fi Rain">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                </button>
+              </div>
+              <div class="playlist-body">
+                <span class="playlist-badge">Relax &amp; Chill</span>
+                <h3 class="playlist-name">Rainy City Coffee Shop</h3>
+                <p class="playlist-desc">Cozy vinyl crackles, gentle acoustic taps, and nostalgic tape warmth.</p>
+                <div class="playlist-meta">
+                  <span>72 Tracks</span> • <span>4h 30m</span> • <span>340K Likes</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 5. POPULAR TRACKS (TRACKLIST TABLE) ==================== -->
+        <section class="section-container" id="tracks">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Popular Tracks</h2>
+              <p class="section-subtitle">The top streamed tracks on AetherAudio right now</p>
+            </div>
+            <div class="filter-pills">
+              <button class="filter-pill active">Global Top 50</button>
+              <button class="filter-pill">New Releases</button>
+              <button class="filter-pill">Viral Hits</button>
+            </div>
+          </div>
+
+          <div class="tracklist-wrapper">
+            <table class="tracklist-table">
+              <thead>
+                <tr>
+                  <th class="col-num">#</th>
+                  <th class="col-title">Title</th>
+                  <th class="col-album">Album</th>
+                  <th class="col-plays">Plays</th>
+                  <th class="col-time">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                  </th>
+                  <th class="col-actions"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Track 1 (Currently Playing Active State) -->
+                <tr class="track-row is-playing">
+                  <td class="col-num">
+                    <span class="track-index">1</span>
+                    <button class="row-play-btn" aria-label="Pause Starlight Horizon">
+                      <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+                    </button>
+                    <div class="animated-bars">
+                      <span></span><span></span><span></span>
+                    </div>
+                  </td>
+                  <td class="col-title">
+                    <div class="track-title-cell">
+                      <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=100&q=80" alt="Starlight Horizon Cover" class="track-thumb">
+                      <div class="track-meta">
+                        <span class="song-title">Starlight Horizon <span class="badge-explicit">E</span></span>
+                        <span class="song-artist">Aura Nova, Dax &amp; Vector</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="col-album">Neon Odyssey</td>
+                  <td class="col-plays">184,921,040</td>
+                  <td class="col-time">3:45</td>
+                  <td class="col-actions">
+                    <input type="checkbox" id="fav-1" class="fav-checkbox" checked>
+                    <label for="fav-1" class="fav-label" title="Save to Liked Songs">
+                      <svg class="heart-icon" viewBox="0 0 24 24" width="18" height="18">
+                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                      </svg>
+                    </label>
+                    <button class="more-options-btn" title="Track options" aria-label="Track options">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <circle cx="12" cy="12" r="2"></circle>
+                        <circle cx="19" cy="12" r="2"></circle>
+                        <circle cx="5" cy="12" r="2"></circle>
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Track 2 -->
+                <tr class="track-row">
+                  <td class="col-num">
+                    <span class="track-index">2</span>
+                    <button class="row-play-btn" aria-label="Play Afterglow Symphony">
+                      <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                    </button>
+                  </td>
+                  <td class="col-title">
+                    <div class="track-title-cell">
+                      <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=100&q=80" alt="Afterglow Symphony Cover" class="track-thumb">
+                      <div class="track-meta">
+                        <span class="song-title">Afterglow Symphony</span>
+                        <span class="song-artist">Kai Vance</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="col-album">Midnight Reverie</td>
+                  <td class="col-plays">142,512,890</td>
+                  <td class="col-time">4:12</td>
+                  <td class="col-actions">
+                    <input type="checkbox" id="fav-2" class="fav-checkbox">
+                    <label for="fav-2" class="fav-label" title="Save to Liked Songs">
+                      <svg class="heart-icon" viewBox="0 0 24 24" width="18" height="18">
+                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                      </svg>
+                    </label>
+                    <button class="more-options-btn" title="Track options" aria-label="Track options">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <circle cx="12" cy="12" r="2"></circle>
+                        <circle cx="19" cy="12" r="2"></circle>
+                        <circle cx="5" cy="12" r="2"></circle>
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Track 3 -->
+                <tr class="track-row">
+                  <td class="col-num">
+                    <span class="track-index">3</span>
+                    <button class="row-play-btn" aria-label="Play Quantum Pulse">
+                      <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                    </button>
+                  </td>
+                  <td class="col-title">
+                    <div class="track-title-cell">
+                      <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=100&q=80" alt="Quantum Pulse Cover" class="track-thumb">
+                      <div class="track-meta">
+                        <span class="song-title">Quantum Pulse</span>
+                        <span class="song-artist">Luna Solaris</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="col-album">Elysian Echoes</td>
+                  <td class="col-plays">99,481,220</td>
+                  <td class="col-time">3:18</td>
+                  <td class="col-actions">
+                    <input type="checkbox" id="fav-3" class="fav-checkbox">
+                    <label for="fav-3" class="fav-label" title="Save to Liked Songs">
+                      <svg class="heart-icon" viewBox="0 0 24 24" width="18" height="18">
+                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                      </svg>
+                    </label>
+                    <button class="more-options-btn" title="Track options" aria-label="Track options">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <circle cx="12" cy="12" r="2"></circle>
+                        <circle cx="19" cy="12" r="2"></circle>
+                        <circle cx="5" cy="12" r="2"></circle>
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Track 4 -->
+                <tr class="track-row">
+                  <td class="col-num">
+                    <span class="track-index">4</span>
+                    <button class="row-play-btn" aria-label="Play Subterranean Echo">
+                      <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                    </button>
+                  </td>
+                  <td class="col-title">
+                    <div class="track-title-cell">
+                      <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=100&q=80" alt="Subterranean Echo Cover" class="track-thumb">
+                      <div class="track-meta">
+                        <span class="song-title">Subterranean Echo</span>
+                        <span class="song-artist">Marcus Thorne</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="col-album">Infinite Odyssey</td>
+                  <td class="col-plays">82,109,301</td>
+                  <td class="col-time">5:04</td>
+                  <td class="col-actions">
+                    <input type="checkbox" id="fav-4" class="fav-checkbox" checked>
+                    <label for="fav-4" class="fav-label" title="Save to Liked Songs">
+                      <svg class="heart-icon" viewBox="0 0 24 24" width="18" height="18">
+                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                      </svg>
+                    </label>
+                    <button class="more-options-btn" title="Track options" aria-label="Track options">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <circle cx="12" cy="12" r="2"></circle>
+                        <circle cx="19" cy="12" r="2"></circle>
+                        <circle cx="5" cy="12" r="2"></circle>
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Track 5 -->
+                <tr class="track-row">
+                  <td class="col-num">
+                    <span class="track-index">5</span>
+                    <button class="row-play-btn" aria-label="Play Lucid Dreams in Tokyo">
+                      <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                    </button>
+                  </td>
+                  <td class="col-title">
+                    <div class="track-title-cell">
+                      <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=100&q=80" alt="Lucid Dreams in Tokyo Cover" class="track-thumb">
+                      <div class="track-meta">
+                        <span class="song-title">Lucid Dreams in Tokyo</span>
+                        <span class="song-artist">Chloe Ray, Aura Nova</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="col-album">Chroma Horizons</td>
+                  <td class="col-plays">71,840,515</td>
+                  <td class="col-time">3:52</td>
+                  <td class="col-actions">
+                    <input type="checkbox" id="fav-5" class="fav-checkbox">
+                    <label for="fav-5" class="fav-label" title="Save to Liked Songs">
+                      <svg class="heart-icon" viewBox="0 0 24 24" width="18" height="18">
+                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                      </svg>
+                    </label>
+                    <button class="more-options-btn" title="Track options" aria-label="Track options">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <circle cx="12" cy="12" r="2"></circle>
+                        <circle cx="19" cy="12" r="2"></circle>
+                        <circle cx="5" cy="12" r="2"></circle>
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Track 6 -->
+                <tr class="track-row">
+                  <td class="col-num">
+                    <span class="track-index">6</span>
+                    <button class="row-play-btn" aria-label="Play Hyperdrive 2099">
+                      <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
+                    </button>
+                  </td>
+                  <td class="col-title">
+                    <div class="track-title-cell">
+                      <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=100&q=80" alt="Hyperdrive 2099 Cover" class="track-thumb">
+                      <div class="track-meta">
+                        <span class="song-title">Hyperdrive 2099 <span class="badge-explicit">E</span></span>
+                        <span class="song-artist">Dax &amp; Vector</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="col-album">Subatomic Velocity</td>
+                  <td class="col-plays">65,490,128</td>
+                  <td class="col-time">2:56</td>
+                  <td class="col-actions">
+                    <input type="checkbox" id="fav-6" class="fav-checkbox">
+                    <label for="fav-6" class="fav-label" title="Save to Liked Songs">
+                      <svg class="heart-icon" viewBox="0 0 24 24" width="18" height="18">
+                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                      </svg>
+                    </label>
+                    <button class="more-options-btn" title="Track options" aria-label="Track options">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <circle cx="12" cy="12" r="2"></circle>
+                        <circle cx="19" cy="12" r="2"></circle>
+                        <circle cx="5" cy="12" r="2"></circle>
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Footer inside scroll area -->
+        <footer class="app-footer">
+          <div class="footer-links">
+            <div class="footer-col">
+              <h5>Company</h5>
+              <a href="#">About AetherAudio</a>
+              <a href="#">Careers</a>
+              <a href="#">Press &amp; News</a>
+            </div>
+            <div class="footer-col">
+              <h5>Communities</h5>
+              <a href="#">For Artists</a>
+              <a href="#">Developers</a>
+              <a href="#">Advertising</a>
+            </div>
+            <div class="footer-col">
+              <h5>Useful Links</h5>
+              <a href="#">Support</a>
+              <a href="#">Web Player</a>
+              <a href="#">Free Mobile App</a>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2026 AetherAudio Technologies Inc. All rights reserved.</p>
+            <div class="footer-socials">
+              <a href="#" aria-label="Twitter">Twitter</a>
+              <a href="#" aria-label="Instagram">Instagram</a>
+              <a href="#" aria-label="Discord">Discord</a>
+            </div>
+          </div>
+        </footer>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ==================== 6. MUSIC PLAYER BAR (FIXED BOTTOM) ==================== -->
+  <footer class="player-bar" id="music-player">
+    <!-- Slim progress bar for mobile viewports -->
+    <div class="mobile-player-progress-bar">
+      <div class="mobile-progress-fill" style="width: 58%;"></div>
+    </div>
+
+    <!-- 6A. CURRENTLY PLAYING TRACK -->
+    <div class="player-left">
+      <div class="player-thumb-wrap">
+        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=120&q=80" alt="Currently playing track thumbnail" class="player-thumb">
+        <span class="playing-live-dot" title="Lossless Audio"></span>
+      </div>
+      <div class="player-track-info">
+        <div class="player-song-title-row">
+          <a href="#track-details" class="player-song-title">Starlight Horizon</a>
+          <span class="badge-mini">MASTER</span>
+        </div>
+        <a href="#artist-profile" class="player-artist-name">Aura Nova, Dax &amp; Vector</a>
+      </div>
+      <div class="player-quick-actions">
+        <!-- Interactive pure CSS like button -->
+        <input type="checkbox" id="player-like-toggle" class="fav-checkbox" checked>
+        <label for="player-like-toggle" class="player-fav-btn" title="Add to Favorites" aria-label="Add to favorites">
+          <svg class="heart-icon" viewBox="0 0 24 24" width="18" height="18">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+          </svg>
+        </label>
+        <button class="player-util-btn" title="Picture in Picture / Visualizer" aria-label="Mini visualizer">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+            <rect x="12" y="10" width="8" height="8" rx="1"></rect>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- 6B. PLAYER CONTROLS & TIMELINE PROGRESS -->
+    <div class="player-center">
+      <div class="playback-controls">
+        <!-- Shuffle Toggle Checkbox -->
+        <input type="checkbox" id="shuffle-toggle" class="control-toggle-input">
+        <label for="shuffle-toggle" class="control-btn toggleable" title="Enable Shuffle" aria-label="Shuffle">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 3 21 3 21 8"></polyline>
+            <line x1="4" y1="20" x2="21" y2="3"></line>
+            <polyline points="21 16 21 21 16 21"></polyline>
+            <line x1="15" y1="15" x2="21" y2="21"></line>
+            <line x1="4" y1="4" x2="9" y2="9"></line>
+          </svg>
+        </label>
+
+        <!-- Previous Track Button -->
+        <button class="control-btn" title="Previous Track" aria-label="Previous track">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <polygon points="19 20 9 12 19 4 19 20"></polygon>
+            <line x1="5" y1="19" x2="5" y2="5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></line>
+          </svg>
+        </button>
+
+        <!-- Play / Pause State Toggle (Pure CSS interactive state) -->
+        <input type="checkbox" id="play-pause-toggle" class="play-state-checkbox" checked>
+        <label for="play-pause-toggle" class="play-pause-btn" title="Play or Pause" aria-label="Play or Pause">
+          <!-- Play Icon shown when paused -->
+          <svg class="icon-play" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <polygon points="6 4 20 12 6 20 6 4"></polygon>
+          </svg>
+          <!-- Pause Icon shown when playing -->
+          <svg class="icon-pause" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <rect x="6" y="4" width="4" height="16" rx="1"></rect>
+            <rect x="14" y="4" width="4" height="16" rx="1"></rect>
+          </svg>
+        </label>
+
+        <!-- Next Track Button -->
+        <button class="control-btn" title="Next Track" aria-label="Next track">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <polygon points="5 4 15 12 5 20 5 4"></polygon>
+            <line x1="19" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></line>
+          </svg>
+        </button>
+
+        <!-- Repeat Toggle Checkbox -->
+        <input type="checkbox" id="repeat-toggle" class="control-toggle-input">
+        <label for="repeat-toggle" class="control-btn toggleable" title="Repeat All" aria-label="Repeat">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="17 1 21 5 17 9"></polyline>
+            <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+            <polyline points="7 23 3 19 7 15"></polyline>
+            <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+          </svg>
+        </label>
+      </div>
+
+      <!-- Timeline & Progress Bar -->
+      <div class="timeline-bar">
+        <span class="time-stamp current-time">2:14</span>
+        <div class="progress-track-wrapper">
+          <input type="range" min="0" max="100" value="58" class="progress-slider" aria-label="Track progress slider">
+          <div class="progress-glow" style="width: 58%;"></div>
+        </div>
+        <span class="time-stamp total-time">3:45</span>
+      </div>
+    </div>
+
+    <!-- 6C. VOLUME & UTILITIES -->
+    <div class="player-right">
+      <button class="player-util-btn" title="Lyrics" aria-label="Lyrics">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 18V5l12-2v13"></path>
+          <circle cx="6" cy="18" r="3"></circle>
+          <circle cx="18" cy="16" r="3"></circle>
+        </svg>
+      </button>
+
+      <button class="player-util-btn" title="Queue" aria-label="Playback queue">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="8" y1="6" x2="21" y2="6"></line>
+          <line x1="8" y1="12" x2="21" y2="12"></line>
+          <line x1="8" y1="18" x2="21" y2="18"></line>
+          <line x1="3" y1="6" x2="3.01" y2="6"></line>
+          <line x1="3" y1="12" x2="3.01" y2="12"></line>
+          <line x1="3" y1="18" x2="3.01" y2="18"></line>
+        </svg>
+      </button>
+
+      <button class="player-util-btn" title="Connect to device" aria-label="Connect to a device">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+          <line x1="12" y1="18" x2="12.01" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Volume Slider Area -->
+      <div class="volume-container">
+        <!-- Pure CSS Mute Toggle -->
+        <input type="checkbox" id="mute-toggle" class="mute-checkbox">
+        <label for="mute-toggle" class="volume-icon-btn" title="Mute / Unmute" aria-label="Toggle mute">
+          <svg class="vol-icon vol-high" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+          </svg>
+          <svg class="vol-icon vol-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+        </label>
+        <div class="volume-slider-wrapper">
+          <input type="range" min="0" max="100" value="75" class="volume-slider" aria-label="Volume slider">
+          <div class="volume-fill-bar" style="width: 75%;"></div>
+        </div>
+      </div>
+
+      <button class="player-util-btn" title="Full screen" aria-label="Enter fullscreen">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <polyline points="9 21 3 21 3 15"></polyline>
+          <line x1="21" y1="3" x2="14" y2="10"></line>
+          <line x1="3" y1="21" x2="10" y2="14"></line>
+        </svg>
+      </button>
+    </div>
+  </footer>
+
+  <!-- ==================== MOBILE BOTTOM NAVIGATION BAR ==================== -->
+  <nav class="mobile-bottom-nav">
+    <a href="#home" class="mobile-nav-link active">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+      </svg>
+      <span>Home</span>
+    </a>
+    <a href="#browse" class="mobile-nav-link">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"></circle>
+        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+      </svg>
+      <span>Browse</span>
+    </a>
+    <a href="#playlists" class="mobile-nav-link">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15V6"></path>
+        <path d="M18.5 18a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"></path>
+        <path d="M12 12H3"></path>
+        <path d="M16 6H3"></path>
+        <path d="M12 18H3"></path>
+      </svg>
+      <span>Playlists</span>
+    </a>
+    <a href="#library" class="mobile-nav-link">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="m16 6 4 14"></path>
+        <path d="M12 6v14"></path>
+        <path d="M8 8v12"></path>
+        <path d="M4 4v16"></path>
+      </svg>
+      <span>Library</span>
+    </a>
+  </nav>
+
+</body>
+</html>
